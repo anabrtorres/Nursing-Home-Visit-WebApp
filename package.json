@@ -1,0 +1,23 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">\r     Nursing Home Visit | WebApp\r </h1>\r <p align=\"center\"> Application developed in the third edition of Rocketseat Next Level Week 💻🚀 </p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anabrtorres/Nursing-Home-Visit-WebApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anabrtorres/Nursing-Home-Visit-WebApp/issues"
+  },
+  "homepage": "https://github.com/anabrtorres/Nursing-Home-Visit-WebApp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
