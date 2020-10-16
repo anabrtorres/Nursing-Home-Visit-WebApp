@@ -52,4 +52,4 @@ By Ana Torres 👋🏽 Find me!
 
 <h2 id="license"> 📝 License </h2>
 
-Este projeto esta sobe a licença MIT.
+This project is under the MIT license.
