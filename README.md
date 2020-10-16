@@ -16,7 +16,7 @@
 </h1>
 
 <h4 align="center"> 
-	🚧 Nursing Home Visit | WebApp 👴👵 Em construção...  🚧
+	🚧 Nursing Home Visit | WebApp 👴👵 Loading...  🚧
 </h4>
 
 <h2 id="objective" > 🎯 Objective </h2>
