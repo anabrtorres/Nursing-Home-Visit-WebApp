@@ -32,9 +32,10 @@ The following tools were used in the construction of the project:
 - HTML
 - CSS
 - JavaScript
-- [Leafley](https://leafletjs.com)
+- [Leafley | Mapa](https://leafletjs.com)
 - [Node.js](https://nodejs.org/en/)
 - [Git Bash](https://gitforwindows.org/)
+- SQL | SQlite
 
 
 <h2 id="contribution"> 🤝 Contribution </h2>
