@@ -12,7 +12,7 @@
 </p>
 
 <h1 align="center">
-  <img width="500" style="border-radius: 10px" height="auto" alt="Happy" title="#Happy" src="/screenshots/happy.gif" />
+  <img width="500" style="border-radius: 10px" height="auto" alt="Happy" title="#Happy" src="/public/screenshots/happy.gif" />
 </h1>
 
 <h4 align="center"> 
