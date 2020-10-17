@@ -4,7 +4,7 @@
   "description": "<h1 align=\"center\">\r     Nursing Home Visit | WebApp\r </h1>\r <p align=\"center\"> Application developed in the third edition of Rocketseat Next Level Week 💻🚀 </p>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/anabrtorres/Nursing-Home-Visit-WebApp#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.5"
   }
 }
