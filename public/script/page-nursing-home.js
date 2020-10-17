@@ -1,3 +1,5 @@
+const spanLat = document.querySelector('span[data-lat]')
+const spanLng = document.querySelector('span[data-lng]')
 const options = {
     draggings: false,
     touchZoom: false,
@@ -6,8 +8,12 @@ const options = {
     zoomControl: false
 };
 
+// get values from html options
+const lat = document.querySelector('span[data-lat]').dataset.lat
+const lng = document.querySelector('span[data-lng]').dataset.lng
+
 // create map
-const map = L.map('mapid', options).setView([-20.1413335,-44.8761516], 16);
+const map = L.map('mapid', options).setView([lat, lng], 16);
 
 // create and add tile layer
 L
@@ -24,7 +30,7 @@ const icon = L.icon ({
 
 // create and add marker
 L
-.marker([-20.1413335,-44.8761516], {icon})
+.marker([lat, lng], {icon})
 .addTo(map)
 
 

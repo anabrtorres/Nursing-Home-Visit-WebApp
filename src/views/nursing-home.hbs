@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Vila Vicentina | Happy</title>
+    <title>{{nursingHome.name}} | Happy</title>
     
 
     <!-- MAP -->
@@ -51,71 +51,70 @@
 
       <main class="animate-appear with-sidebar">
         <div class="asylum-details">
-          <img src="/images/home.jpg" alt="Vila Vicentina" />
+          <img src="{{nursingHome.firstImage}}" alt="{{nursingHome.name}}" />
 
           <div class="images">
+            {{#each nursingHome.images}}
             <button onclick="selectImage(event)" class="active" type="button">
-              <img src="/images/home.jpg" alt="Vila Vicentina" />
+              <img src="{{this}}" alt="{{nursingHome.name}}" />
             </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="/images/img1.jpg" alt="Vila Vicentina" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="/images/img2.jpg" alt="Vila Vicentina" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="/images/img3.jpg" alt="Vila Vicentina" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="/images/img4.jpg" alt="Vila Vicentina" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="/images/img5.jpg" alt="Vila Vicentina" />
-            </button>
+            {{/each}}            
           </div>
 
           <div class="asylum-details-content">
-            <h1>Vila Vicentina</h1>
+            <h1>{{nursingHome.name}}</h1>
             <p>
-              Presta assistência a idosos tanto dependentes quanto independentes, que precisam de assistência e cuidados especializados.
+              {{nursingHome.about}}
             </p>
 
             <div class="map-container">
               <div id="mapid"></div>
+              <span 
+                data-lat="{{nursingHome.lat}}"
+                data-lng="{{nursingHome.lng}}"
+              ></span>
 
               <footer>
-                <a href="https://goo.gl/maps/PwL3vUydUyNznxJG9">Ver rotas no Google Maps</a>
+                <a target="_blank" href="http://maps.google.com/maps?z=15&q={{nursingHome.lat}},{{nursingHome.lng}}">Ver rotas no Google Maps</a>
               </footer>
             </div>
 
             <hr />
 
             <h2>Instruções para visita</h2>
-            <p>Vista um sorriso no rosto e traga muito amor e paciência.</p>
+            <p>{{nursingHome.instructions}}</p>
 
             <div class="open-details">
               <div class="hour">
                 <img src="/images/clock.svg" alt="Horários" />
-                Horário de visitas das 8h às 18h
+                {{nursingHome.opening_hours}}
               </div>
-              <div class="date">
-                <img src="/images/info.svg" alt="Informações" />
-                Atendemos fim de semana
-              </div>
+
+              {{#if nursingHome.openOnWeekends}}
+                <div class="date open">
+                  
+                  <img src="/images/info.svg" alt="Informações" />
+                  Atendemos no fim de semana
+                  
+                </div>
+              {{else}}
+                <div class="date closed">
+                  
+                  <img src="/images/info-red.svg" alt="Informações" />
+                  Não atendemos no fim de semana
+                  
+                </div>
+              {{/if}}
+
             </div>
 
-            <button type="button" class="primary-button">
+            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{nursingHome.whatsapp}}&text=Olá, quero visitar {{nursingHome.name}}" target="_blank" type="button" class="primary-button">
               <img
                 src="/images/whatsapp.svg"
                 alt="Chamar no whatsapp"
               />
               Entrar em contato
-            </button>
+            </a>
           </div>
         </div>
       </main>
