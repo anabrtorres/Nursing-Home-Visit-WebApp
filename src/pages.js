@@ -1,5 +1,6 @@
 const Database = require('./database/db')
 const saveNursingHome = require('./database/saveNursingHome')
+const deleteNursingHome = require('./database/deleteNursingHome')
 
 
 module.exports = {
@@ -73,9 +74,25 @@ module.exports = {
         } catch (error) {
             console.log(error)
             return res.send('Erro no banco de dados')
-        }
+        }        
+    },
 
-        
+    async deleteNursingHome(req, res) {
+
+        let id = req.params.id;
+
+        try {
+            //salvar lar de idosos
+            const db = await Database
+            await deleteNursingHome(db, id)
+
+            //redirecionamento
+            return res.redirect('/find-nursing-home')
+
+        } catch (error) {
+            console.log(error)
+            return res.send('Erro no banco de dados')
+        }        
     }
 
 }

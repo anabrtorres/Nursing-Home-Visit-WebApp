@@ -1,125 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt_BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>{{nursingHome.name}} | Happy</title>
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- MAP -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
+  <title>{{nursingHome.name}} | Happy</title>
 
-    <!-- ICON -->
-    <link rel="icon" href="/images/logo-icon.png" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/page-home.css" />
-    <link rel="stylesheet" href="/css/animations.css" />
-    <link rel="stylesheet" href="/css/sidebar.css" />
-    <link rel="stylesheet" href="/css/buttons.css" />
-    <link rel="stylesheet" href="/css/map.css" />
+  <!-- MAP -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 
-    <!-- FONT -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="page-home">
-      <aside class="animate-right sidebar">
-        <img src="/images/map-marker.svg" alt="Happy" />
+  <!-- ICON -->
+  <link rel="icon" href="/images/logo-icon.png" />
 
-        <footer>
-          <button onclick="history.back()">
-            <img src="/images/arrow-back.svg" alt="" />
-          </button>
-        </footer>
-      </aside>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/page-home.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/sidebar.css" />
+  <link rel="stylesheet" href="/css/buttons.css" />
+  <link rel="stylesheet" href="/css/map.css" />
 
-      <main class="animate-appear with-sidebar">
-        <div class="asylum-details">
-          <img src="{{nursingHome.firstImage}}" alt="{{nursingHome.name}}" />
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
+</head>
 
-          <div class="images">
-            {{#each nursingHome.images}}
-            <button onclick="selectImage(event)" class="active" type="button">
-              <img src="{{this}}" alt="{{nursingHome.name}}" />
-            </button>
-            {{/each}}            
-          </div>
+<body>
+  <div id="page-home">
+    <aside class="animate-right sidebar">
+      <img src="/images/map-marker.svg" alt="Happy" />
 
-          <div class="asylum-details-content">
-            <h1>{{nursingHome.name}}</h1>
-            <p>
-              {{nursingHome.about}}
-            </p>
+      <footer>
+        <button onclick="history.back()">
+          <img src="/images/arrow-back.svg" alt="" />
+        </button>
+      </footer>
+    </aside>
 
-            <div class="map-container">
-              <div id="mapid"></div>
-              <span 
-                data-lat="{{nursingHome.lat}}"
-                data-lng="{{nursingHome.lng}}"
-              ></span>
+    <main class="animate-appear with-sidebar">
+      <div class="asylum-details">
 
-              <footer>
-                <a target="_blank" href="http://maps.google.com/maps?z=15&q={{nursingHome.lat}},{{nursingHome.lng}}">Ver rotas no Google Maps</a>
-              </footer>
-            </div>
 
-            <hr />
-
-            <h2>Instruções para visita</h2>
-            <p>{{nursingHome.instructions}}</p>
-
-            <div class="open-details">
-              <div class="hour">
-                <img src="/images/clock.svg" alt="Horários" />
-                {{nursingHome.opening_hours}}
-              </div>
-
-              {{#if nursingHome.openOnWeekends}}
-                <div class="date open">
-                  
-                  <img src="/images/info.svg" alt="Informações" />
-                  Atendemos no fim de semana
-                  
-                </div>
-              {{else}}
-                <div class="date closed">
-                  
-                  <img src="/images/info-red.svg" alt="Informações" />
-                  Não atendemos no fim de semana
-                  
-                </div>
-              {{/if}}
-
-            </div>
-
-            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{nursingHome.whatsapp}}&text=Olá, quero visitar {{nursingHome.name}}" target="_blank" type="button" class="primary-button">
-              <img
-                src="/images/whatsapp.svg"
-                alt="Chamar no whatsapp"
-              />
-              Entrar em contato
-            </a>
-          </div>
+        <div id="deleteNursingHome">
+          <a href="/delete-nursing-home/{{nursingHome.id}}">
+            <button class="delete-button"> 
+              <img src="/images/trash.png" alt="Excluir" />
+            </button> 
+          </a>     
         </div>
-      </main>
 
-      <script src="/script/page-nursing-home.js"></script>
-    </div>
-  </body>
+
+        <img src="{{nursingHome.firstImage}}" alt="{{nursingHome.name}}" />
+
+        <div class="images">
+          {{#each nursingHome.images}}
+          <button onclick="selectImage(event)" class="active" type="button">
+            <img src="{{this}}" alt="{{nursingHome.name}}" />
+          </button>
+          {{/each}}
+        </div>
+
+        <div class="asylum-details-content">
+          <h1>{{nursingHome.name}}</h1>
+          <p>
+            {{nursingHome.about}}
+          </p>
+
+          <div class="map-container">
+            <div id="mapid"></div>
+            <span data-lat="{{nursingHome.lat}}" data-lng="{{nursingHome.lng}}"></span>
+
+            <footer>
+              <a target="_blank" href="http://maps.google.com/maps?z=15&q={{nursingHome.lat}},{{nursingHome.lng}}">Ver
+                rotas no Google Maps</a>
+            </footer>
+          </div>
+
+          <hr />
+
+          <h2>Instruções para visita</h2>
+          <p>{{nursingHome.instructions}}</p>
+
+          <div class="open-details">
+            <div class="hour">
+              <img src="/images/clock.svg" alt="Horários" />
+              {{nursingHome.opening_hours}}
+            </div>
+
+            {{#if nursingHome.openOnWeekends}}
+            <div class="date open">
+
+              <img src="/images/info.svg" alt="Informações" />
+              Atendemos no fim de semana
+
+            </div>
+            {{else}}
+            <div class="date closed">
+
+              <img src="/images/info-red.svg" alt="Informações" />
+              Não atendemos no fim de semana
+
+            </div>
+            {{/if}}
+
+          </div>
+
+          <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{nursingHome.whatsapp}}&text=Olá, quero visitar {{nursingHome.name}}"
+            target="_blank" type="button" class="primary-button">
+            <img src="/images/whatsapp.svg" alt="Chamar no whatsapp" />
+            Entrar em contato
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script src="/script/page-nursing-home.js"></script>
+  </div>
+</body>
+
 </html>

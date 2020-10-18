@@ -21,7 +21,8 @@ server
     .get('/', pages.index)
     .get('/nursing-home', pages.nursingHome)
     .get('/find-nursing-home', pages.findNursingHome)
-    .get('/create-nursing-home', pages.createNursingHome)
+    .get('/create-nursing-home', pages.createNursingHome)    
+    .get('/delete-nursing-home/:id', pages.deleteNursingHome)    
     .post('/save-nursing-home', pages.saveNursingHome)
 
 

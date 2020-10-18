@@ -56,3 +56,33 @@
 .button-select button:focus {
   border: 1px solid #5c8599;
 }
+
+/*--- delete button ---*/
+
+.delete-button {
+  position: absolute;
+  right: 2rem;
+  margin-top: 2rem;
+  width: 48px;
+  height: 48px;
+
+  opacity: .9;
+  border: none;
+  background: #cfe9ee;
+  border-radius: 1.6rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 200ms;
+}
+
+.delete-button:hover {
+  background: #afdfe9;
+}
+
+.delete-button img {
+  width: 2rem;
+}
