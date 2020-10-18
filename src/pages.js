@@ -82,7 +82,7 @@ module.exports = {
         let id = req.params.id;
 
         try {
-            //salvar lar de idosos
+            //deletar lar de idosos
             const db = await Database
             await deleteNursingHome(db, id)
 

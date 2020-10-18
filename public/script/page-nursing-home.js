@@ -50,3 +50,11 @@ function selectImage(event) {
 
     button.classList.add("active")
 }
+
+// delete confirmations
+function confirmation(id) {
+    var resposta = confirm("Deseja remover esse local?");
+     if (resposta == true) {
+        window.location.href='/delete-nursing-home/'+id;
+     }
+}
