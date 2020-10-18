@@ -13,31 +13,31 @@
 
 .location,
 h1,
-.visit p {
+.opening_hours p {
   height: 14vh;
 }
 
 #logo {
   width: 22rem;
-  animation-delay: 50ms;
-}
-
-.location {
   animation-delay: 100ms;
 }
 
-main h1 {
+.location {
   animation-delay: 150ms;
+}
+
+main h1 {
+  animation-delay: 200ms;
   font-size: clamp(4rem, 8vw, 7rem);
 }
 
-.visit p {
-  animation-delay: 200ms;
+.opening_hours p {
+  animation-delay: 250ms;
 }
 
-.visit a {
+.opening_hours a {
   width: 8rem;
-  height: 7rem;
+  height: 8rem;
   background: #ffd666;
 
   border: none;
@@ -53,7 +53,7 @@ main h1 {
   animation-delay: 250ms;
 }
 
-.visit a:hover {
+.opening_hours a:hover {
   background: #96feff;
 }
 
@@ -61,6 +61,7 @@ main h1 {
 
 @media (min-width: 768px) {
   #container {
+    animation-delay: 50ms;
     background: url("../images/back.png") no-repeat 75% /
       clamp(30rem, 52vw, 56rem);
   }
@@ -73,7 +74,7 @@ main h1 {
 
   .location,
   h1,
-  .visit p {
+  .opening_hours p {
     height: initial;
     text-align: initial;
   }
@@ -93,19 +94,33 @@ main h1 {
     margin: clamp(8%, 9vh, 10%) 0 4rem;
   }
 
-  .visit {
+  .opening_hours {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .visit p {
+  .opening_hours p {
     font-size: 2.4rem;
     line-height: 1.5;
-    width: clamp(20rem, 20vw, 30rem);
+    width: clamp(22rem, 25vw, 30rem);
   }
 
-  .visit a {
+  .opening_hours a {
     margin: initial;
+  }
+}
+
+
+/* desktop version */
+
+@media (max-width: 768px) {
+  .opening_hours p {
+    margin-top: 3rem;
+  }
+  .opening_hours a {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 2rem;
   }
 }

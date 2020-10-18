@@ -51,7 +51,7 @@
       </aside>
 
       <main class="animate-appear with-sidebar">
-        <form action="">
+        <form action="save-nursing-home" method="post" onsubmit="validate(event)">
           <fieldset>
             <legend>Dados</legend>
 
@@ -81,7 +81,7 @@
 
             <div class="input-block">
               <label for="whatsapp">Número de WhatsApp</label>
-              <input id="whatsapp" type="tel" name="whatsapp" required />
+              <input id="whatsapp" name="whatsapp" required />
             </div>
 
             <div class="input-block images">
@@ -93,6 +93,7 @@
                     name="images"
                     placeholder="Cole o link da foto aqui"
                     required
+                    type="url"
                   />
                   <span onclick="deleteField(event)">
                     <img
@@ -125,8 +126,8 @@
             </div>
 
             <div class="input-block">
-              <label for="visit">Horário das visitas</label>
-              <input id="visit" name="visit" required />
+              <label for="opening_hours">Horário das visitas</label>
+              <input id="opening_hours" name="opening_hours" required />
             </div>
 
             <div class="input-block">

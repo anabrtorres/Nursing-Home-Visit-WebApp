@@ -8,6 +8,8 @@ const server = express()
 
 
 server
+    // utilizar body do req
+    .use(express.urlencoded({extended: true}))
     // arquivos estáticos
     .use(express.static('public'))
 
@@ -20,6 +22,7 @@ server
     .get('/nursing-home', pages.nursingHome)
     .get('/find-nursing-home', pages.findNursingHome)
     .get('/create-nursing-home', pages.createNursingHome)
+    .post('/save-nursing-home', pages.saveNursingHome)
 
 
 // ligar o servidor

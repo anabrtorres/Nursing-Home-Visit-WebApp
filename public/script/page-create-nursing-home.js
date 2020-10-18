@@ -86,3 +86,14 @@ function toggleSelect(event) {
 
   input.value = button.dataset.value;
 }
+
+function validate(event) {
+  // validar preenchimento de lat e lng
+  const verification = document.querySelector('.map-container input');
+
+  if(verification.value == "") {
+    event.preventDefault();
+    alert("Selecione um local no mapa!");
+  }
+  
+}
