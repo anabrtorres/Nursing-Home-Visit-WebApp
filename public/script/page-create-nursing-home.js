@@ -1,8 +1,8 @@
 // create map
-const map = L.map("mapid").setView([-20.1413335, -44.8761516], 16);
+const map = L.map('mapid').setView([-20.1413335, -44.8761516], 16);
 
 // create and add tile layer
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
 // create icon
 const icon = L.icon({
@@ -18,8 +18,8 @@ map.on("click", (event) => {
   const lat = event.latlng.lat;
   const lng = event.latlng.lng;
 
-  document.querySelector("[name=lat]").value = lat;
-  document.querySelector("[name=lng]").value = lng;
+  document.querySelector('[name=lat]').value = lat;
+  document.querySelector('[name=lng]').value = lng;
 
   // remove icon
   marker && map.removeLayer(marker);

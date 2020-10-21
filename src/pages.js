@@ -55,7 +55,7 @@ module.exports = {
 
         try {
             //salvar lar de idosos
-            const db = await Database
+            const db = await Database;
             await saveNursingHome(db, {
                 lat: fields.lat,
                 lng: fields.lng,
@@ -66,14 +66,14 @@ module.exports = {
                 instructions: fields.instructions,
                 opening_hours: fields.opening_hours,
                 open_on_weekends: fields.open_on_weekends,
-            })
+            });
 
             //redirecionamento
-            return res.redirect('/find-nursing-home')
+            return res.redirect('/find-nursing-home');
 
         } catch (error) {
-            console.log(error)
-            return res.send('Erro no banco de dados')
+            console.log(error);
+            return res.send('Erro no banco de dados');
         }        
     },
 
@@ -83,8 +83,8 @@ module.exports = {
 
         try {
             //deletar lar de idosos
-            const db = await Database
-            await deleteNursingHome(db, id)
+            const db = await Database;
+            await deleteNursingHome(db, id);
 
             //redirecionamento
             return res.redirect('/find-nursing-home')
@@ -94,5 +94,4 @@ module.exports = {
             return res.send('Erro no banco de dados')
         }        
     }
-
 }
